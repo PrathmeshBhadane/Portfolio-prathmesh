@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'blog/blog.css' %}">
+
+<div class="blog-container">
+  <div class="blog-post">
+    <h1>{{ post.title }}</h1>
+    <p class="blog-meta">Published: {{ post.created_at|date:"M d, Y H:i" }}</p>
+
+    {% if post.image %}
+      <img src="{{ post.image.url }}" alt="{{ post.title }}">
+    {% endif %}
+
+    <div class="blog-content">
+      <p>{{ post.content }}</p>
+    </div>
+  </div>
+  <p><a href="/blog/">← Back to Blog</a></p>
+</div>
+{% endblock %}

@@ -1,0 +1,127 @@
+/* ========================
+   Blog List Page Styles
+   ======================== */
+
+.blog-container {
+    max-width: 850px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+/* Blog List Heading */
+.blog-container h1 {
+    font-size: 2rem;
+    color: #1e3d59;
+    margin-bottom: 20px;
+    font-family: "Georgia", serif;
+}
+
+/* Individual Blog Post (List Page) */
+.blog-post {
+    background: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.blog-post h2 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.blog-post h2 a {
+    text-decoration: none;
+    color: #226f54; /* Soft green */
+    transition: color 0.3s ease;
+}
+
+.blog-post h2 a:hover {
+    color: #1e3d59; /* Dark navy */
+}
+
+/* Meta info */
+.blog-meta {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Post Images */
+.blog-post img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+/* ========================
+   Blog Detail Page Styles
+   ======================== */
+
+.blog-detail-container {
+    max-width: 850px;
+    margin: 30px auto;
+    padding: 25px;
+    background: #f0f9f6; /* Soft pastel green */
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+}
+
+.blog-detail-container h1 {
+    font-size: 2rem;
+    color: #1e3d59;
+    margin-bottom: 10px;
+    font-family: "Georgia", serif;
+}
+
+.blog-detail-meta {
+    font-size: 0.9rem;
+    color: #4a665d;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.blog-detail-container img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+.blog-content {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #2c3e50;
+    margin-top: 15px;
+}
+
+/* Back Link */
+.blog-detail-container a {
+    display: inline-block;
+    margin-top: 25px;
+    text-decoration: none;
+    color: #226f54;
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.blog-detail-container a:hover {
+    color: #1e3d59;
+    border-bottom: 1px solid #1e3d59;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .blog-container,
+    .blog-detail-container {
+        padding: 18px;
+    }
+
+    .blog-post h2,
+    .blog-detail-container h1 {
+        font-size: 1.6rem;
+    }
+}

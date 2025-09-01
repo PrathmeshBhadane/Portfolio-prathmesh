@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="{% static 'portfolio/portfolio.css' %}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="hamburger">&#9776;</div>
+        <div class="nav-links">
+            {% if request.path == '/' %}
+                <a href="/">Home</a>
+                <a href="/blog/">Blogs</a>
+                <a href="/#contact">Contact</a>
+                <a href="/">Resume</a>
+                <a href="/#experience">Experience</a>
+                <a href="/#projects">Projects</a>
+            {% else %}
+                <a href="/">Home</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div class="sidebar hide" id="sidebar">
+        <div class="close-btn" id="close-btn">&times;</div>
+        {% if request.path == '/' %}
+            <a href="/">Home</a>
+            <a href="/blog/">Blogs</a>
+            <a href="/#experience">Experience</a>
+            <a href="/#projects">Projects</a>
+            <a href="/">Resume</a>
+            <a href="/#contact">Contact</a>
+        {% else %}
+            <a href="/">Home</a>
+        {% endif %}
+    </div>
+
+    <hr>
+
+    <!-- Page Content -->
+    {% block content %}{% endblock %}
+
+    <!-- JS for Hamburger + Sidebar -->
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const sidebar = document.getElementById('sidebar');
+        const closeBtn = document.getElementById('close-btn');
+
+        // Open sidebar
+        hamburger.addEventListener('click', () => {
+            sidebar.classList.add('active');
+            sidebar.classList.remove('hide');
+        });
+
+        // Close sidebar
+        closeBtn.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+            sidebar.classList.add('hide');
+        });
+
+        // Close sidebar when a link is clicked
+        sidebar.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                sidebar.classList.remove('active');
+                sidebar.classList.add('hide');
+            });
+        });
+    </script>
+</body>
+</html>
