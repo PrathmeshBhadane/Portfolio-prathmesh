@@ -76,6 +76,8 @@ source venv/bin/activate
 ### 3. Install Dependencies
 ```bash
 pip install django
+pip install pillow
+pip install jinja2
 ```
 
 ### 4. Run Database Migrations
